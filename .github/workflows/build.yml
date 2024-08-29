@@ -1,6 +1,6 @@
 on: push
 jobs:
   first-job:
-    runs-on: windows-latest
+    runs-on: self-hosted
     steps: 
      -java --version
