@@ -1,5 +1,9 @@
+name: PerformanceDemo
 on: push
+
 jobs:
-    first-job:
-        runs-on: self-hosted
-        steps: -java --version
+    runs-on: [self-hosted,mydeals-runner01]
+    steps:
+        - name: Check javaVersion
+          run: |
+             java --version
