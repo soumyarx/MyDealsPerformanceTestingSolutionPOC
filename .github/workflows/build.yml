@@ -1,25 +1,8 @@
-name: Check Java Version
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+name: hello-world
+on: push
 jobs:
-  check-java:
+  my-job:
     runs-on: self-hosted
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Set up Java
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'  # Specify the Java version to check
-
-    - name: Verify Java version
-      run: java -version
+      - name: my-step
+        run: echo "Hello World!"
