@@ -1,6 +1,5 @@
 on: push
 jobs:
-  first-job:
-    runs-on: self-hosted
-    steps: 
-     -java --version
+    first-job:
+        runs-on: self-hosted
+        steps: -java --version
