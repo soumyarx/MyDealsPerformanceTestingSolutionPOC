@@ -1,0 +1,47 @@
+version: 2
+updates:
+        - package-ecosystem: "npm"
+          directory: "Intel.MyDeals/Client"
+          open-pull-requests-limit: 2
+          schedule:
+                interval: "weekly"
+                timezone: "America/Los_Angeles"
+          commit-message:
+                prefix: "TWC3119-0000: npm dependency - "
+          ignore:
+                - dependency-name: "*"
+                  update-types: ["version-update:semver-major","version-update:semver-minor"]
+                - dependency-name: "bootstrap*"
+                  update-types: ["version-update:semver-major","version-update:semver-minor"]
+                - dependency-name: "*handsontable*"
+                  update-types: ["version-update:semver-major","version-update:semver-minor"]
+                - dependency-name: "@progress/*"
+                  update-types: ["version-update:semver-major","version-update:semver-minor"]
+                - dependency-name: "@angular/*"
+                  update-types: ["version-update:semver-major","version-update:semver-minor"]
+                - dependency-name: "@types/*"
+                  update-types: ["version-update:semver-major","version-update:semver-minor"]
+          pull-request-branch-name:
+                separator: "-"
+          versioning-strategy: increase-if-necessary
+          labels:
+                - "dependencies"
+          groups:
+                dev-dependencies:
+                    patterns:
+                        - "*"  
+        - package-ecosystem: "nuget"
+          directory: "/"
+          open-pull-requests-limit: 2
+          schedule:
+                interval: "weekly"
+                timezone: "America/Los_Angeles"
+          commit-message:
+                prefix: "TWC3119-0000: NuGet dependency - "
+          pull-request-branch-name:
+                separator: "-"
+          labels:
+                - "dependencies"
+          ignore:
+                - dependency-name: "*"
+                  update-types: ["version-update:semver-major"]
